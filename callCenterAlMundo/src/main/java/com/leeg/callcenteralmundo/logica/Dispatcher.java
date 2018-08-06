@@ -14,12 +14,12 @@ public class Dispatcher {
         LogicaEmpleados<Supervisor> logicaGeneralSupervisor = new LogicaEmpleados<>();
         LogicaEmpleados<Director> logicaGeneralDirector = new LogicaEmpleados<>();
         
-        Empleado empleadoAsignado = logicaGeneralOperador.encontrarSiguienteEmpleadoDisponible(FabricaObjetos.crearOperador() );
+        Empleado empleadoAsignado = logicaGeneralOperador.encontrarSiguienteEmpleadoDisponible( new Operador() );
         
         if (empleadoAsignado == null) {
-            empleadoAsignado = logicaGeneralSupervisor.encontrarSiguienteEmpleadoDisponible(FabricaObjetos.crearSupervisor() );
+            empleadoAsignado = logicaGeneralSupervisor.encontrarSiguienteEmpleadoDisponible( new Supervisor() );
             if (empleadoAsignado == null) {
-                empleadoAsignado = logicaGeneralDirector.encontrarSiguienteEmpleadoDisponible(FabricaObjetos.crearDirector() );
+                empleadoAsignado = logicaGeneralDirector.encontrarSiguienteEmpleadoDisponible( new Director() );
             }
         }
 

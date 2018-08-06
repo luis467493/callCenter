@@ -1,4 +1,4 @@
-package com.leeg.callcenteralmundo.logica;
+package com.leeg.callcenteralmundo.ejecucion;
 
 import com.leeg.callcenteralmundo.modelo.Empleados;
 import com.leeg.callcenteralmundo.modelo.LlamadaTelefonica;
@@ -9,18 +9,15 @@ public class CallCenter {
 
         Empleados.llenarEmpleados();
         Integer maxLlamadasGeneradas = 13;
-        LlamadaTelefonica llamadaTelefonica = null;
+        LlamadaTelefonica llamadaTelefonica;
 
         for (int indice = 1; indice <= maxLlamadasGeneradas; indice++) {
-            llamadaTelefonica = FabricaObjetos.crearLlamadaTelefonica();
+            llamadaTelefonica = new LlamadaTelefonica();
             llamadaTelefonica.setIdLlamada("Llamada " + indice);
-            llamadaTelefonica.setEmpleados(Empleados.empleados);
+            llamadaTelefonica.setEmpleados(Empleados.EMPLEADOS);
             llamadaTelefonica.start();
             Thread.sleep(200L);
         }
-
-        llamadaTelefonica = null;
-        maxLlamadasGeneradas = null;
 
     }
 

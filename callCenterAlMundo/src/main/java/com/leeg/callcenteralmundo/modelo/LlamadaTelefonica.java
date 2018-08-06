@@ -12,17 +12,13 @@ public class LlamadaTelefonica extends Thread{
     private List<Empleado> empleados;
 
     private String idLlamada;
-    private Date fechaHoraInicio;
+    
     private Empleado contestador;
     private Boolean enEspera = true;
     private Boolean respondida = false;
     private Boolean finalizada = false;
     private final Integer rangoMinimoDuracionLlamada = 5;
     private final Integer rangoMaximoDuracionLlamada = 10;
-
-    public LlamadaTelefonica() {
-        fechaHoraInicio = new Date();
-    }
     
     @Override
     public void run() {
@@ -65,10 +61,6 @@ public class LlamadaTelefonica extends Thread{
         
         System.out.println( getIdLlamada() + " finalizada " + new Date());
     }    
-
-    public Date getFechaHoraInicio() {
-        return fechaHoraInicio;
-    }
 
     public void setContestador(Empleado contestador) {
         this.contestador = contestador;

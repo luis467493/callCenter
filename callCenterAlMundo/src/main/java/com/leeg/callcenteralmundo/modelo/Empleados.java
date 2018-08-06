@@ -1,64 +1,63 @@
 package com.leeg.callcenteralmundo.modelo;
 
-import com.leeg.callcenteralmundo.logica.FabricaObjetos;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Empleados {
     
-    public static List<Empleado> empleados = new ArrayList<>();
+    public static final List<Empleado> EMPLEADOS = new ArrayList<>();
 
     public static void llenarEmpleados() {
         
-        Operador operador = FabricaObjetos.crearOperador();
+        Operador operador = new Operador();
         operador.setNombre("Pepito Perez");
         operador.setAsignado(false);
-        empleados.add(operador);
+        EMPLEADOS.add(operador);
         
-        Supervisor supervisor = FabricaObjetos.crearSupervisor();
+        Supervisor supervisor = new Supervisor();
         supervisor.setNombre("Juan Pigna");
         supervisor.setAsignado(false);
-        empleados.add(supervisor);
+        EMPLEADOS.add(supervisor);
         
-        Director director = FabricaObjetos.crearDirector();
+        Director director = new Director();
         director.setNombre("Tropi cana");
         director.setAsignado(false);
-        empleados.add(director);
+        EMPLEADOS.add(director);
         
-        operador = FabricaObjetos.crearOperador();
+        operador = new Operador();
         operador.setNombre("Armando Casas");
         operador.setAsignado(false);
-        empleados.add(operador);
+        EMPLEADOS.add(operador);
         
-        director = FabricaObjetos.crearDirector();
+        director = new Director();
         director.setNombre("Andrea Juanpi");
         director.setAsignado(false);
-        empleados.add(director);
+        EMPLEADOS.add(director);
         
-        supervisor = FabricaObjetos.crearSupervisor();
+        supervisor = new Supervisor();
         supervisor.setNombre("Ame Las");
         supervisor.setAsignado(false);
-        empleados.add(supervisor);
+        EMPLEADOS.add(supervisor);
         
-        operador = FabricaObjetos.crearOperador();
+        operador = new Operador();
         operador.setNombre("Elver Gomez");
         operador.setAsignado(false);
-        empleados.add(operador);
+        EMPLEADOS.add(operador);
         
-        supervisor = FabricaObjetos.crearSupervisor();
+        supervisor = new Supervisor();
         supervisor.setNombre("Aran Danos");
         supervisor.setAsignado(false);
-        empleados.add(supervisor);
+        EMPLEADOS.add(supervisor);
         
-        director = FabricaObjetos.crearDirector();
+        director = new Director();
         director.setNombre("Esteban quito");
         director.setAsignado(false);
-        empleados.add(director);
+        EMPLEADOS.add(director);
         
-        director = FabricaObjetos.crearDirector();
+        director = new Director();
         director.setNombre("Popo San");
         director.setAsignado(false);
-        empleados.add(director);
+        EMPLEADOS.add(director);
         
     }
 
